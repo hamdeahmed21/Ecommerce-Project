@@ -75,20 +75,17 @@
                 </ul>
             </li>
 
-            <li class="treeview">
+            <li class="treeview {{ ($prefix == '/slider')?'active':'' }}  ">
                 <a href="#">
-                    <i data-feather="package"></i>
-                    <span>Utilities</span>
+                    <i data-feather="file"></i>
+                    <span>Slider</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="utilities_border.html"><i class="ti-more"></i>Border</a></li>
-                    <li><a href="utilities_color.html"><i class="ti-more"></i>Color</a></li>
-                    <li><a href="utilities_ribbons.html"><i class="ti-more"></i>Ribbons</a></li>
-                    <li><a href="utilities_tab.html"><i class="ti-more"></i>Tabs</a></li>
-                    <li><a href="utilities_animations.html"><i class="ti-more"></i>Animation</a></li>
+                    <li class="{{ ($route == 'manage-slider')? 'active':'' }}"><a href="{{ route('manage-slider') }}"><i class="ti-more"></i>Manage Slider</a></li>
+
                 </ul>
             </li>
 
