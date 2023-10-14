@@ -59,18 +59,19 @@
                 </ul>
             </li>
 
-            <li class="treeview">
+            <li class="treeview {{ ($prefix == '/product')?'active':'' }}  ">
                 <a href="#">
-                    <i data-feather="hard-drive"></i>
-                    <span>Content</span>
+                    <i data-feather="file"></i>
+                    <span>Products</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="content_typography.html"><i class="ti-more"></i>Typography</a></li>
-                    <li><a href="content_media.html"><i class="ti-more"></i>Media</a></li>
-                    <li><a href="content_grid.html"><i class="ti-more"></i>Grid</a></li>
+                    <li class="{{ ($route == 'add-product')? 'active':'' }}"><a href="{{ route('add-product') }}"><i class="ti-more"></i>Add Products</a></li>
+
+                    <li class="{{ ($route == 'manage-product')? 'active':'' }}"><a href="{{ route('manage-product') }}"><i class="ti-more"></i>Manage Products</a></li>
+
                 </ul>
             </li>
 
