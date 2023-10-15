@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\LanguageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -169,3 +170,25 @@ Route::prefix('slider')->group(function(){
     Route::get('/active/{id}', [SliderController::class, 'SliderActive'])->name('slider.active');
 
 });
+
+//// Frontend All Routes /////
+/// Multi Language All Routes ////
+
+Route::get('/language/france', [LanguageController::class, 'France'])->name('france.language');
+
+Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
+// Frontend Product Details Page url
+Route::get('/product/details/{id}/{slug}', [IndexController::class, 'ProductDetails']);
+
+
+// Frontend Product Tags Page
+Route::get('/product/tag/{tag}', [IndexController::class, 'TagWiseProduct']);
+// Frontend SubCategory wise Data
+Route::get('/subcategory/product/{subcat_id}/{slug}', [IndexController::class, 'SubCatWiseProduct']);
+
+// Frontend Sub-SubCategory wise Data
+Route::get('/subsubcategory/product/{subsubcat_id}/{slug}', [IndexController::class, 'SubSubCatWiseProduct']);
+
+
+// Product View Modal with Ajax
+Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax']);
